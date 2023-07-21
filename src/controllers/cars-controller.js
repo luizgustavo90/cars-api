@@ -1,6 +1,8 @@
 import axios from "axios"
 import dotenv from 'dotenv'
 import LogController from "./logs-controller.js"
+import validate from "../helpers/validation.js"
+import { returnModelCarsList, returnModelCreatedCar, returnModelError } from "../helpers/return-models.js"
 
 dotenv.config()
 
@@ -9,29 +11,37 @@ class CarsController {
 
         try{
         const response = await axios.get(`${process.env.API_CARS}/api/cars`)        
-        return res.status(200).json(response.data)
+        return returnModelCarsList(res,response)
 
         } catch (err){
-            return res.status(err.status).json(err.message)
+            return returnModelError(res,err)
         }
 
     }
 
     static createCar = async (req,res) => {
         try{
-            let newCar = {
+            validate(res,req)
+            let car ={
                 title: req.body.title,
                 brand: req.body.brand,
                 price: req.body.price,
                 age: req.body.age
             }
-            await axios.post(`${process.env.API_CARS}/api/createCar`, newCar)
-            LogController.insertLog(newCar._id)
+            console.log(req.headers)
+            let newCar = await axios.post(`${process.env.API_CARS}/api/cars`, car)
+            await LogController.insertLog(res,newCar.data._id)
 
-            return res.status(200).json({message: "Car was created!"})            
+            const payloadQueue = {
+                carId: newCar.data._id,
+                urlCallback: req.headers["x-callback-url"]
+            }
+            //envia para fila 
+
+            return returnModelCreatedCar(res,newCar.data._id )           
 
             } catch (err){
-                return res.status(err.status).json(err.message)
+                return returnModelError(res,err)
             }
 
     }
