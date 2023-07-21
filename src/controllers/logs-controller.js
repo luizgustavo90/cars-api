@@ -14,6 +14,10 @@ class LogController {
         }
     }
 
+    static logList = async (req,res) =>{
+
+    }
+
 }
 
 export default LogController

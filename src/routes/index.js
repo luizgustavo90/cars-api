@@ -1,6 +1,6 @@
 import express from 'express'
-import carList from './carsRoute.js'
-import insertLog from './logsRoute.js'
+import car from './carsRoute.js'
+import log from './logsRoute.js'
 
 const routes = (app) => {
     app.route('/').get((req,res) => {
@@ -9,8 +9,8 @@ const routes = (app) => {
 
     app.use(
         express.json(),
-       carList,
-       insertLog
+       car,
+       log
        
     )
 }
