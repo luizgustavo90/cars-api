@@ -14,6 +14,10 @@ function returnModelLogsList(res, response) {
     return res.status(200).json(response)
 }
 
+function returnModelWebhook (res,webhookResponse){
+    return res.status(200).json(webhookResponse)
+}
+
 async function returnModelError(res, err) {
     return res.status(err.status).json(notFound(err))
     }
@@ -35,4 +39,4 @@ async function returnModelError(res, err) {
 
 
 
-export {returnModelCreatedCar,returnModelCarsList, returnModelError,returnModelValidation, returnModelLogsList}
+export {returnModelCreatedCar,returnModelCarsList, returnModelError,returnModelValidation, returnModelLogsList, returnModelWebhook}
