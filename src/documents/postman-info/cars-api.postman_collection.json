@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "6d61f21a-a914-4da0-8a24-14174c7bfb9f",
+		"name": "cars-api",
+		"description": "An API responsible to:\n\n- GET a cars list from: [http://api-test.bhut.com.br:3000]()\n- POST a new car to: [http://api-test.bhut.com.br:3000]()\n    - When a car is created, is sent a message in to a queue which is responsible to read the message to a webhook.\n- GET a logs list to a database (MongoDB)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27581508"
+	},
+	"item": [
+		{
+			"name": "Cars",
+			"item": [
+				{
+					"name": "listCars",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/listCars",
+						"description": "Responsible to get a cars list"
+					},
+					"response": [
+						{
+							"name": "listCars",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8080/api/listCars"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "10548"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2934-GluHOFi2qtN5aCZvCq7viMvksCQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Jul 2023 16:55:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"643c759e94a4c4001c3e19d4\",\n        \"title\": \"Prisma\",\n        \"brand\": \"VW\",\n        \"price\": \"70.000\",\n        \"age\": 2020,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"643c75c494a4c4001c3e19d5\",\n        \"title\": \"RS5 Sportback\",\n        \"brand\": \"Audi\",\n        \"price\": \"769.000\",\n        \"age\": 2022,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"643c762a94a4c4001c3e19d6\",\n        \"title\": \"Compass\",\n        \"brand\": \"Jeep\",\n        \"price\": \"110.000\",\n        \"age\": 2018,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"643c769d94a4c4001c3e19d7\",\n        \"title\": \"Taycan Turbo S\",\n        \"brand\": \"Porsche\",\n        \"price\": \"899.000\",\n        \"age\": 2021,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"643c77b094a4c4001c3e19d8\",\n        \"title\": \"Cross Up\",\n        \"brand\": \"VW\",\n        \"price\": \"55.900\",\n        \"age\": 2016,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6474b52f94a4c4001c3e19da\",\n        \"title\": \"Gol 1.0\",\n        \"brand\": \"VW\",\n        \"price\": \"45.000\",\n        \"age\": 2021,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6476038494a4c4001c3e19de\",\n        \"title\": \"Hilux\",\n        \"brand\": \"Toyota\",\n        \"price\": \"250.000\",\n        \"age\": 2022,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6476049994a4c4001c3e19df\",\n        \"title\": \"Lancer\",\n        \"brand\": \"mitsubishi\",\n        \"price\": \"120.000\",\n        \"age\": 2021,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"647604d094a4c4001c3e19e0\",\n        \"title\": \"Lancer Evo\",\n        \"brand\": \"mitsubishi\",\n        \"price\": \"150.000\",\n        \"age\": 2023,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6476051b94a4c4001c3e19e1\",\n        \"title\": \"Fusca\",\n        \"brand\": \"VW\",\n        \"price\": \"5.000\",\n        \"age\": 1985,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6476055a94a4c4001c3e19e2\",\n        \"title\": \"Fox\",\n        \"brand\": \"VW\",\n        \"price\": \"55.000\",\n        \"age\": 2020,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"647605cd94a4c4001c3e19e3\",\n        \"title\": \"Prisma\",\n        \"brand\": \"Chevrolet\",\n        \"price\": \"55.000\",\n        \"age\": 2020,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6476060094a4c4001c3e19e4\",\n        \"title\": \"Celta\",\n        \"brand\": \"Chevrolet\",\n        \"price\": \"15.000\",\n        \"age\": 2020,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"647607a894a4c4001c3e19e7\",\n        \"title\": \"Corsa Sedan\",\n        \"brand\": \"Chevrolet\",\n        \"price\": \"12.000\",\n        \"age\": 2010,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6476094b94a4c4001c3e19e8\",\n        \"title\": \"Onix\",\n        \"brand\": \"Chevrolet\",\n        \"price\": \"52.000\",\n        \"age\": 2021,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64760e5794a4c4001c3e19f5\",\n        \"title\": \"Corsa Hatch\",\n        \"brand\": \"Chevrolet\",\n        \"price\": \"25.000\",\n        \"age\": 2011,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6477180194a4c4001c3e19fa\",\n        \"title\": \"Polo\",\n        \"brand\": \"VW\",\n        \"price\": \"95.000\",\n        \"age\": 2020,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64771a2694a4c4001c3e19fb\",\n        \"title\": \"Frontier\",\n        \"brand\": \"Nissan\",\n        \"price\": \"135.000\",\n        \"age\": 2020,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64771af994a4c4001c3e19fc\",\n        \"title\": \"Sentra Advanced\",\n        \"brand\": \"Nissan\",\n        \"price\": \"100.000\",\n        \"age\": 2020,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"647724b894a4c4001c3e1a02\",\n        \"title\": \"HB20\",\n        \"brand\": \"Hyundai\",\n        \"price\": \"60.000\",\n        \"age\": 2020,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6478cc4e94a4c4001c3e1a03\",\n        \"title\": \"Palio Attractive\",\n        \"brand\": \"Fiat\",\n        \"price\": \"35.000\",\n        \"age\": 2015,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6478cd4d94a4c4001c3e1a04\",\n        \"title\": \"Palio Weekend\",\n        \"brand\": \"Fiat\",\n        \"price\": \"17.500\",\n        \"age\": 2010,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6478cd8d94a4c4001c3e1a05\",\n        \"title\": \"Gol sportline\",\n        \"brand\": \"VW\",\n        \"price\": \"27.500\",\n        \"age\": 2010,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6478cf3794a4c4001c3e1a06\",\n        \"title\": \"Bolt\",\n        \"brand\": \"Chevrolet\",\n        \"price\": \"273.500\",\n        \"age\": 2023,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6478cf9294a4c4001c3e1a07\",\n        \"title\": \"Camaro\",\n        \"brand\": \"Chevrolet\",\n        \"price\": \"350.500\",\n        \"age\": 2015,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6478d03194a4c4001c3e1a08\",\n        \"title\": \"Camaro\",\n        \"brand\": \"Chevrolet\",\n        \"price\": \"350.500\",\n        \"age\": 2015,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6478d06f94a4c4001c3e1a09\",\n        \"title\": \"Camaro\",\n        \"brand\": \"Chevrolet\",\n        \"price\": \"350.500\",\n        \"age\": 2015,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6478d10294a4c4001c3e1a0a\",\n        \"title\": \"Q3\",\n        \"brand\": \"Audi\",\n        \"price\": \"203.000\",\n        \"age\": 2023,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6478d18494a4c4001c3e1a0b\",\n        \"title\": \"Renegade 1.3\",\n        \"brand\": \"Jeep\",\n        \"price\": \"133.000\",\n        \"age\": 2023,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6478d20294a4c4001c3e1a0c\",\n        \"title\": \"500e Icon \",\n        \"brand\": \"Fiat\",\n        \"price\": \"285.000\",\n        \"age\": 2022,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6478d38d94a4c4001c3e1a0d\",\n        \"title\": \"Huracan \",\n        \"brand\": \"Lamborghini\",\n        \"price\": \"510.000\",\n        \"age\": 2021,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6478d3c694a4c4001c3e1a0e\",\n        \"title\": \"Fluence \",\n        \"brand\": \"Renault\",\n        \"price\": \"100.000\",\n        \"age\": 2023,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6478d64794a4c4001c3e1a0f\",\n        \"title\": \"Logan \",\n        \"brand\": \"Renault\",\n        \"price\": \"91.000\",\n        \"age\": 2020,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6478e11994a4c4001c3e1a10\",\n        \"title\": \"Kwid \",\n        \"brand\": \"Renault\",\n        \"price\": \"41.000\",\n        \"age\": 2020,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6478eb2d94a4c4001c3e1a11\",\n        \"title\": \"Voyage\",\n        \"brand\": \"VW\",\n        \"price\": \"77.000\",\n        \"age\": 2022,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bac56d94a4c4001c3e1a1d\",\n        \"title\": \"Gol quadrado\",\n        \"brand\": \"Volkswagen\",\n        \"price\": \"50000\",\n        \"age\": 2017,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bac57294a4c4001c3e1a1e\",\n        \"title\": \"Gol quadrado\",\n        \"brand\": \"Volkswagen\",\n        \"price\": \"50000\",\n        \"age\": 2017,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bac58994a4c4001c3e1a1f\",\n        \"title\": \"Gol quadrado\",\n        \"brand\": \"Volkswagen\",\n        \"price\": \"50000\",\n        \"age\": 2017,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bac5a494a4c4001c3e1a20\",\n        \"title\": \"Gol quadrado\",\n        \"brand\": \"Volkswagen\",\n        \"price\": \"50000\",\n        \"age\": 2017,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bac5aa94a4c4001c3e1a21\",\n        \"title\": \"Gol quadrado\",\n        \"brand\": \"Volkswagen\",\n        \"price\": \"50000\",\n        \"age\": 2017,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bac5ad94a4c4001c3e1a22\",\n        \"title\": \"Gol quadrado\",\n        \"brand\": \"Volkswagen\",\n        \"price\": \"50000\",\n        \"age\": 2017,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bac69c94a4c4001c3e1a23\",\n        \"title\": \"Gol quadrado\",\n        \"brand\": \"Volkswagen\",\n        \"price\": \"50000\",\n        \"age\": 2017,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bac78a94a4c4001c3e1a24\",\n        \"title\": \"207\",\n        \"brand\": \"Peugeot\",\n        \"price\": \"20000\",\n        \"age\": 2012,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bac93094a4c4001c3e1a25\",\n        \"title\": \"206\",\n        \"brand\": \"Peugeot\",\n        \"price\": \"20000\",\n        \"age\": 2012,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bad2d394a4c4001c3e1a26\",\n        \"title\": \"F-50\",\n        \"brand\": \"Ferrari\",\n        \"price\": \"1.000.000\",\n        \"age\": 1996,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bad3c594a4c4001c3e1a27\",\n        \"title\": \"F-50\",\n        \"brand\": \"Ferrari\",\n        \"price\": \"1.000.000\",\n        \"age\": 1996,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bad4aa94a4c4001c3e1a28\",\n        \"title\": \"F-50\",\n        \"brand\": \"Ferrari\",\n        \"price\": \"1.000.000\",\n        \"age\": 1996,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bad50094a4c4001c3e1a29\",\n        \"title\": \"F-50\",\n        \"brand\": \"Ferrari\",\n        \"price\": \"1.000.000\",\n        \"age\": 1996,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bad59594a4c4001c3e1a2a\",\n        \"title\": \"F-50\",\n        \"brand\": \"Ferrari\",\n        \"price\": \"1.000.000\",\n        \"age\": 1996,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bad5c494a4c4001c3e1a2b\",\n        \"title\": \"F-50\",\n        \"brand\": \"Ferrari\",\n        \"price\": \"1.000.000\",\n        \"age\": 1996,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bad5e994a4c4001c3e1a2c\",\n        \"title\": \"F-50\",\n        \"brand\": \"Ferrari\",\n        \"price\": \"1.000.000\",\n        \"age\": 1996,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bad63094a4c4001c3e1a2d\",\n        \"title\": \"F-50\",\n        \"brand\": \"Ferrari\",\n        \"price\": \"1.000.000\",\n        \"age\": 1996,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bad6b894a4c4001c3e1a2e\",\n        \"title\": \"F-50\",\n        \"brand\": \"Ferrari\",\n        \"price\": \"1.000.000\",\n        \"age\": 1996,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bad73394a4c4001c3e1a2f\",\n        \"title\": \"F-50\",\n        \"brand\": \"Ferrari\",\n        \"price\": \"1.000.000\",\n        \"age\": 1996,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bad7a794a4c4001c3e1a30\",\n        \"title\": \"F-50\",\n        \"brand\": \"Ferrari\",\n        \"price\": \"1.000.000\",\n        \"age\": 1996,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bad82294a4c4001c3e1a31\",\n        \"title\": \"F-50\",\n        \"brand\": \"Ferrari\",\n        \"price\": \"1.000.000\",\n        \"age\": 1996,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bad84294a4c4001c3e1a32\",\n        \"title\": \"Palio\",\n        \"brand\": \"Fiat\",\n        \"price\": \"20000\",\n        \"age\": 2012,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bad89894a4c4001c3e1a33\",\n        \"title\": \"Strada\",\n        \"brand\": \"Fiat\",\n        \"price\": \"20000\",\n        \"age\": 2012,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bad8c694a4c4001c3e1a34\",\n        \"title\": \"F-50\",\n        \"brand\": \"Ferrari\",\n        \"price\": \"1.000.000\",\n        \"age\": 1996,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bad8d694a4c4001c3e1a35\",\n        \"title\": \"Strada\",\n        \"brand\": \"Fiat\",\n        \"price\": \"20000\",\n        \"age\": 2012,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bad91d94a4c4001c3e1a36\",\n        \"title\": \"Marea\",\n        \"brand\": \"Fiat\",\n        \"price\": \"20000\",\n        \"age\": 2012,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bad92094a4c4001c3e1a37\",\n        \"title\": \"F-50\",\n        \"brand\": \"Ferrari\",\n        \"price\": \"1.000.000\",\n        \"age\": 1996,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bad96d94a4c4001c3e1a38\",\n        \"title\": \"F-50\",\n        \"brand\": \"Ferrari\",\n        \"price\": \"1.000.000\",\n        \"age\": 1996,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bad9e094a4c4001c3e1a39\",\n        \"title\": \"F-50\",\n        \"brand\": \"Ferrari\",\n        \"price\": \"1.000.000\",\n        \"age\": 1996,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bada2b94a4c4001c3e1a3a\",\n        \"title\": \"Gol bolinha\",\n        \"brand\": \"Volkswagem\",\n        \"price\": \"24000\",\n        \"age\": 2011,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64badb9494a4c4001c3e1a3b\",\n        \"title\": \"Gol bolinha\",\n        \"brand\": \"Volkswagem\",\n        \"price\": \"24000\",\n        \"age\": 2011,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64badcb394a4c4001c3e1a3c\",\n        \"title\": \"Saveiro\",\n        \"brand\": \"Volkswagem\",\n        \"price\": \"28000\",\n        \"age\": 2011,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64badcbb94a4c4001c3e1a3d\",\n        \"title\": \"F1000\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64badcf694a4c4001c3e1a3e\",\n        \"title\": \"Saveiro 2\",\n        \"brand\": \"Volkswagem\",\n        \"price\": \"28000\",\n        \"age\": 2011,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64badd6294a4c4001c3e1a3f\",\n        \"title\": \"Saveiro 6\",\n        \"brand\": \"Volkswagem\",\n        \"price\": \"28000\",\n        \"age\": 2011,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64badd8f94a4c4001c3e1a40\",\n        \"title\": \"F1000\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bade0f94a4c4001c3e1a41\",\n        \"title\": \"F1000\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64badf5694a4c4001c3e1a42\",\n        \"title\": \"F1000\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64badfd994a4c4001c3e1a45\",\n        \"title\": \"Vectra\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"633c75c494a4c4001c3e19d5\",\n        \"title\": \"BRONCO\",\n        \"brand\": \"FORD\",\n        \"price\": \"12,000\",\n        \"age\": 2021,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc091b94a4c4001c3e1a4d\",\n        \"title\": \"picape\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc09e094a4c4001c3e1a4e\",\n        \"title\": \"picape\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc0a8a94a4c4001c3e1a4f\",\n        \"title\": \"picape\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc18db94a4c4001c3e1a50\",\n        \"title\": \"picape\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc198e94a4c4001c3e1a51\",\n        \"title\": \"picape\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc19dd94a4c4001c3e1a52\",\n        \"title\": \"picape\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc1a5194a4c4001c3e1a53\",\n        \"title\": \"picape\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc1b2c94a4c4001c3e1a54\",\n        \"title\": \"picape\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc202e94a4c4001c3e1a55\",\n        \"title\": \"picape\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc20f794a4c4001c3e1a56\",\n        \"title\": \"picape\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc217494a4c4001c3e1a57\",\n        \"title\": \"picape\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc234a94a4c4001c3e1a58\",\n        \"title\": \"picape\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc270594a4c4001c3e1a59\",\n        \"title\": \"picape\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc272b94a4c4001c3e1a5a\",\n        \"title\": \"picape\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc289c94a4c4001c3e1a5b\",\n        \"title\": \"picape\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc28e194a4c4001c3e1a5c\",\n        \"title\": \"picape\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc293894a4c4001c3e1a5d\",\n        \"title\": \"picape\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc2abe94a4c4001c3e1a5e\",\n        \"title\": \"picape\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc2ae994a4c4001c3e1a5f\",\n        \"title\": \"picape\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc2c1494a4c4001c3e1a60\",\n        \"title\": \"picape\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc2c3294a4c4001c3e1a61\",\n        \"title\": \"picape\",\n        \"brand\": \"GM\",\n        \"price\": \"20.000\",\n        \"age\": 1970,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc65d094a4c4001c3e1a62\",\n        \"title\": \"TEST\",\n        \"brand\": \"TEST\",\n        \"price\": \"80\",\n        \"age\": 25,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc7d5c94a4c4001c3e1a63\",\n        \"title\": \"Prisma\",\n        \"brand\": \"VW\",\n        \"price\": \"true\",\n        \"age\": 2020,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc7f1f94a4c4001c3e1a64\",\n        \"title\": \"Prisma\",\n        \"brand\": \"VW\",\n        \"price\": \"true\",\n        \"age\": 2020,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc7f4794a4c4001c3e1a65\",\n        \"title\": \"Prisma\",\n        \"brand\": \"VW\",\n        \"price\": \"8200\",\n        \"age\": 2020,\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "createCar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-callback-url",
+								"value": "https://webhook.site/2f24ba9d-e8d9-40ab-a3b4-4adfce1f0e6e",
+								"description": "Webhook's Link",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"S-10 total Flex\",\r\n    \"brand\": \"GM\",\r\n    \"price\": \"140.000\",\r\n    \"age\": 2023\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/createCar",
+						"description": "Responsible to create a car"
+					},
+					"response": [
+						{
+							"name": "createCar",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-callback-url",
+										"value": "https://webhook.site/2f24ba9d-e8d9-40ab-a3b4-4adfce1f0e6e",
+										"description": "Webhook's Link",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"S-10 total Flex\",\r\n    \"brand\": \"GM\",\r\n    \"price\": \"140.000\",\r\n    \"age\": 2023\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/api/createCar"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "139"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8b-gmuLwmMip7iM4XACoeVdGjyg42E\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Jul 2023 16:55:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"body\": \"Car was created\",\n    \"detail\": \"Car was created, Log of car's ID: 64bd5b9294a4c4001c3e1a79 was created on database! \"\n}"
+						}
+					]
+				}
+			],
+			"description": "Cars routes:"
+		},
+		{
+			"name": "Log",
+			"item": [
+				{
+					"name": "logs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/logs"
+					},
+					"response": [
+						{
+							"name": "logs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8080/api/logs"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2951"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b87-+bZX+2UIFDBq12RmNGEkOIFclUo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Jul 2023 16:55:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"64badf56e626f03be5e86058\",\n        \"data_hora\": \"2023-07-21T19:41:10.933Z\",\n        \"car_id\": \"64badf5694a4c4001c3e1a42\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64badfda3d5c2084e2302b13\",\n        \"data_hora\": \"2023-07-21T19:43:22.088Z\",\n        \"car_id\": \"64badfd994a4c4001c3e1a45\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc091c3fb2f16c798db320\",\n        \"data_hora\": \"2023-07-22T16:51:40.105Z\",\n        \"car_id\": \"64bc091b94a4c4001c3e1a4d\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc09e1c111e2b2ddc900a0\",\n        \"data_hora\": \"2023-07-22T16:54:57.097Z\",\n        \"car_id\": \"64bc09e094a4c4001c3e1a4e\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc0a8be7fda52f76bd0b5a\",\n        \"data_hora\": \"2023-07-22T16:57:47.091Z\",\n        \"car_id\": \"64bc0a8a94a4c4001c3e1a4f\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc18dc9c18f195cce270ad\",\n        \"data_hora\": \"2023-07-22T17:58:52.125Z\",\n        \"car_id\": \"64bc18db94a4c4001c3e1a50\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc198f4c73ec48fe2b1e14\",\n        \"data_hora\": \"2023-07-22T18:01:51.124Z\",\n        \"car_id\": \"64bc198e94a4c4001c3e1a51\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc19de2ebe1b1a723df21a\",\n        \"data_hora\": \"2023-07-22T18:03:10.122Z\",\n        \"car_id\": \"64bc19dd94a4c4001c3e1a52\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc1a52576e30f2347757e9\",\n        \"data_hora\": \"2023-07-22T18:05:06.123Z\",\n        \"car_id\": \"64bc1a5194a4c4001c3e1a53\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc1b2d7b4629c98f0c8186\",\n        \"data_hora\": \"2023-07-22T18:08:45.127Z\",\n        \"car_id\": \"64bc1b2c94a4c4001c3e1a54\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc202ebb902a8db7d968bc\",\n        \"data_hora\": \"2023-07-22T18:30:06.161Z\",\n        \"car_id\": \"64bc202e94a4c4001c3e1a55\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc20f7b1f34e965b16b9f8\",\n        \"data_hora\": \"2023-07-22T18:33:27.137Z\",\n        \"car_id\": \"64bc20f794a4c4001c3e1a56\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc217442267f854b3cc270\",\n        \"data_hora\": \"2023-07-22T18:35:32.134Z\",\n        \"car_id\": \"64bc217494a4c4001c3e1a57\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc234a0475624a41041de7\",\n        \"data_hora\": \"2023-07-22T18:43:22.131Z\",\n        \"car_id\": \"64bc234a94a4c4001c3e1a58\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc27050a2f820d9b6def91\",\n        \"data_hora\": \"2023-07-22T18:59:17.145Z\",\n        \"car_id\": \"64bc270594a4c4001c3e1a59\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc272b08b6b07f53adced9\",\n        \"data_hora\": \"2023-07-22T18:59:55.495Z\",\n        \"car_id\": \"64bc272b94a4c4001c3e1a5a\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc289ce1b76350d5967a88\",\n        \"data_hora\": \"2023-07-22T19:06:04.142Z\",\n        \"car_id\": \"64bc289c94a4c4001c3e1a5b\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc28e1b6a01ec3635371d2\",\n        \"data_hora\": \"2023-07-22T19:07:13.151Z\",\n        \"car_id\": \"64bc28e194a4c4001c3e1a5c\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc293892aa036207c10677\",\n        \"data_hora\": \"2023-07-22T19:08:40.145Z\",\n        \"car_id\": \"64bc293894a4c4001c3e1a5d\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc2abe39c649d132f071af\",\n        \"data_hora\": \"2023-07-22T19:15:10.137Z\",\n        \"car_id\": \"64bc2abe94a4c4001c3e1a5e\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc2ae94fc38206073d0501\",\n        \"data_hora\": \"2023-07-22T19:15:53.149Z\",\n        \"car_id\": \"64bc2ae994a4c4001c3e1a5f\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc2c14c517bacc0c888ec8\",\n        \"data_hora\": \"2023-07-22T19:20:52.148Z\",\n        \"car_id\": \"64bc2c1494a4c4001c3e1a60\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bc2c32c517bacc0c888eca\",\n        \"data_hora\": \"2023-07-22T19:21:22.132Z\",\n        \"car_id\": \"64bc2c3294a4c4001c3e1a61\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bd58a39aa9e8dc9c58b885\",\n        \"data_hora\": \"2023-07-23T16:43:15.991Z\",\n        \"car_id\": \"64bd58a494a4c4001c3e1a78\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64bd5b92a221dde8651eb0f8\",\n        \"data_hora\": \"2023-07-23T16:55:46.341Z\",\n        \"car_id\": \"64bd5b9294a4c4001c3e1a79\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				}
+			],
+			"description": "Responsible to get a list of logs"
+		}
+	]
+}
