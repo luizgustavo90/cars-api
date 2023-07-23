@@ -30,25 +30,19 @@ class CarsController {
                 price: req.body.price,
                 age: req.body.age
             }
-            console.log("headers:", req.headers)
             let newCar = await axios.post(`${process.env.API_CARS}/api/cars`, car)
-            console.log("postou o carro***")
             await LogController.insertLog(res, newCar.data._id)
-            console.log("inseriu o log****")
             const payLoadQueue = {
                 body: {
                     carId: newCar.data._id,
                     urlCallback: req.headers["x-callback-url"]
                 }
             }
-            console.log("vai enviar pra fila**", payLoadQueue)
             await ServiceBusMessage.sendMessage(payLoadQueue)
-  
-            console.log("finalziado***")
+
             return returnModelCreatedCar(res, newCar.data._id)
 
         } catch (err) {
-            console.log("erro-->", err)
             return returnModelError(res, err)
         }
 
