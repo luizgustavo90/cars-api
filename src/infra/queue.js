@@ -23,7 +23,6 @@ class ServiceBusMessage {
 
     static readMessage = async () => {
         try {
-            console.log("entrando read message-->")
             const connectionString = process.env.SERVICEBUS_CONNECTION_STRING
             const serviceBus = new sb.ServiceBusClient(connectionString)
             const receiver = serviceBus.createReceiver("cars-api-message-sb")

@@ -5,7 +5,7 @@ import queue from './infra/queue.js'
 
 db.on("error", console.log.bind(console, "Error in Connection!"))
 db.once("open", () => {
-    console.log("database -> Connected successfully!")
+    console.log("Databse connected successfully!")
 })
 const app = express()
 
