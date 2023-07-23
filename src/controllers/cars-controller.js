@@ -4,7 +4,6 @@ import LogController from "./logs-controller.js"
 import validate from "../helpers/validation.js"
 import { returnModelCarsList, returnModelCreatedCar, returnModelError } from "../helpers/return-models.js"
 import ServiceBusMessage from "../infra/queue.js"
-import WebhookController from "./webhook-controller.js"
 
 
 dotenv.config()
