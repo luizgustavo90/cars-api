@@ -4,7 +4,7 @@ class WebhookController {
 
     static webhookProcessor = async (queueMessage) => {
         try {
-            console.log("Starting WebhookController.webhookProcessor -", req)
+            console.log("Starting WebhookController.webhookProcessor -")
             let payloadWebhook = { message: "Car was created sucessfully!", carId: queueMessage.carId }
             let responseWebhook = await axios.post(queueMessage.urlCallback, payloadWebhook)
             console.log("Finishing WebhookController.webhookProcessor -", responseWebhook)
