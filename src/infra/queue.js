@@ -9,13 +9,16 @@ class ServiceBusMessage {
 
     static sendMessage = async (messageQueue) => {
         try {
+            console.log("Starting ServiceBusMessage.sendMessage -")
             const connectionString = process.env.SERVICEBUS_CONNECTION_STRING
             const serviceBus = new sb.ServiceBusClient(connectionString)
             const sender = serviceBus.createSender("cars-api-message-sb")
+            console.log("Finishing ServiceBusMessage.sendMessage -")
             await sender.sendMessages(messageQueue)
 
 
         } catch (err) {
+            console.log("Finishing ServiceBusMessage.sendMessage with an Error -", err)
             return err
 
         }
@@ -23,6 +26,7 @@ class ServiceBusMessage {
 
     static readMessage = async () => {
         try {
+            console.log("Starting ServiceBusMessage.readMessage -")
             const connectionString = process.env.SERVICEBUS_CONNECTION_STRING
             const serviceBus = new sb.ServiceBusClient(connectionString)
             const receiver = serviceBus.createReceiver("cars-api-message-sb")
@@ -40,9 +44,11 @@ class ServiceBusMessage {
                 processMessage: myMessageHandler,
                 processError: myErrorHandler
             });
+            console.log("Finishing ServiceBusMessage.readMessage -")
 
 
         } catch (err) {
+            console.log("Finishing ServiceBusMessage.readMessage with an Error -", err)
             return err
 
         }
