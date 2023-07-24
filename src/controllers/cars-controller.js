@@ -12,10 +12,13 @@ class CarsController {
     static carsList = async (req, res) => {
 
         try {
+            console.log("Starting CarsController.carsList -")
             const response = await axios.get(`${process.env.API_CARS}/api/cars`)
+            console.log("Finishing CarsController.carsList -")
             return returnModelCarsList(res, response)
 
         } catch (err) {
+            console.log("Finishing CarsController.carsList with an Error -", err)
             return returnModelError(res, err)
         }
 
@@ -23,6 +26,7 @@ class CarsController {
 
     static createCar = async (req, res) => {
         try {
+            console.log("Starting CarsController.createCar -", req.body)
             validate(req)
             let car = {
                 title: req.body.title,
@@ -39,10 +43,11 @@ class CarsController {
                 }
             }
             await ServiceBusMessage.sendMessage(payLoadQueue)
-
+            console.log("Finishing CarsController.createCar -", newCar)
             return returnModelCreatedCar(res, newCar.data._id)
 
         } catch (err) {
+            console.log("Finishing CarsController.createCar with an Error -", err)
             return returnModelError(res, err)
         }
 
